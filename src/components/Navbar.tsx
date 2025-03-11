@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { AppBar, Toolbar, Box, Link } from '@mui/material';
+import { AppBar, Toolbar, Box, Link, LinkProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const Logo = styled('img')({
@@ -9,7 +9,7 @@ const Logo = styled('img')({
   marginRight: 20,
 });
 
-const NavLink = styled(Link)(({ theme }) => ({
+const NavLink = styled(Link)<LinkProps>(({ theme }) => ({
   color: '#fff',
   textDecoration: 'none',
   marginRight: 20,
@@ -29,29 +29,29 @@ export default function Navbar() {
         <Logo src="/imgs/logo.png" alt="My Logo" />
         <Box>
           <NavLink
-            component={RouterLink}
             to="/"
+            component={RouterLink}
             sx={{ textDecoration: location.pathname === '/' ? 'underline' : 'none' }}
           >
             Home
           </NavLink>
           <NavLink
-            component={RouterLink}
             to="/mortgage"
+            component={RouterLink}
             sx={{ textDecoration: location.pathname === '/mortgage' ? 'underline' : 'none' }}
           >
             Home Mortgage Calculator
           </NavLink>
           <NavLink
-            component={RouterLink}
             to="/sip"
+            component={RouterLink}
             sx={{ textDecoration: location.pathname === '/sip' ? 'underline' : 'none' }}
           >
             Systematic Investment Plan
           </NavLink>
           <NavLink
-            component={RouterLink}
             to="/car-loan"
+            component={RouterLink}
             sx={{ textDecoration: location.pathname === '/car-loan' ? 'underline' : 'none' }}
           >
             Car Loan Calculator

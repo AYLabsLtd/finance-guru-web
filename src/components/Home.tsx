@@ -2,23 +2,23 @@ import React from 'react';
 import { Container, Typography, Box, Alert } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const HomeContainer = styled(Container)(({ theme }) => ({
+const HomeContainer = styled(Container)({
   textAlign: 'center',
   padding: '60px 20px',
   maxWidth: 800,
   margin: '0 auto',
-}));
+});
 
-const Title = styled(Typography)(({ theme }) => ({
+const Title = styled(Typography)({
   fontSize: '2.2rem',
   marginBottom: '20px',
-}));
+});
 
-const Description = styled(Typography)(({ theme }) => ({
+const Description = styled(Typography)({
   fontSize: '1.2rem',
   marginBottom: '16px',
   lineHeight: 1.5,
-}));
+});
 
 export default function Home() {
   return (
