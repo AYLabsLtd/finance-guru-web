@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { AppBar, Toolbar, Box, Link, LinkProps } from '@mui/material';
+import { AppBar, Toolbar, Box, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const Logo = styled('img')({
@@ -9,16 +9,15 @@ const Logo = styled('img')({
   marginRight: 20,
 });
 
-const NavLink = styled(Link)<LinkProps>(({ theme }) => ({
+const NavButton = styled(Button)({
   color: '#fff',
-  textDecoration: 'none',
   marginRight: 20,
   fontWeight: 600,
   fontSize: 16,
   '&:hover': {
     textDecoration: 'underline',
   },
-}));
+});
 
 export default function Navbar() {
   const location = useLocation();
@@ -28,34 +27,46 @@ export default function Navbar() {
       <Toolbar>
         <Logo src="/imgs/logo.png" alt="My Logo" />
         <Box>
-          <NavLink
-            to="/"
+          <NavButton
             component={RouterLink}
-            sx={{ textDecoration: location.pathname === '/' ? 'underline' : 'none' }}
+            to="/"
+            variant="text"
+            sx={{
+              textDecoration: location.pathname === '/' ? 'underline' : 'none',
+            }}
           >
             Home
-          </NavLink>
-          <NavLink
-            to="/mortgage"
+          </NavButton>
+          <NavButton
             component={RouterLink}
-            sx={{ textDecoration: location.pathname === '/mortgage' ? 'underline' : 'none' }}
+            to="/mortgage"
+            variant="text"
+            sx={{
+              textDecoration: location.pathname === '/mortgage' ? 'underline' : 'none',
+            }}
           >
             Home Mortgage Calculator
-          </NavLink>
-          <NavLink
-            to="/sip"
+          </NavButton>
+          <NavButton
             component={RouterLink}
-            sx={{ textDecoration: location.pathname === '/sip' ? 'underline' : 'none' }}
+            to="/sip"
+            variant="text"
+            sx={{
+              textDecoration: location.pathname === '/sip' ? 'underline' : 'none',
+            }}
           >
             Systematic Investment Plan
-          </NavLink>
-          <NavLink
-            to="/car-loan"
+          </NavButton>
+          <NavButton
             component={RouterLink}
-            sx={{ textDecoration: location.pathname === '/car-loan' ? 'underline' : 'none' }}
+            to="/car-loan"
+            variant="text"
+            sx={{
+              textDecoration: location.pathname === '/car-loan' ? 'underline' : 'none',
+            }}
           >
             Car Loan Calculator
-          </NavLink>
+          </NavButton>
         </Box>
       </Toolbar>
     </AppBar>
