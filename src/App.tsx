@@ -33,7 +33,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <FinanceProvider>
-        <Router>
+        <Router basename="/finance-guru-web">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
