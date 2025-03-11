@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { AppBar, Toolbar, Box, Button } from '@mui/material';
+import { Link as RouterLink, useLocation, LinkProps as RouterLinkProps } from 'react-router-dom';
+import { AppBar, Toolbar, Box, Button, ButtonProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const Logo = styled('img')({
@@ -9,7 +9,12 @@ const Logo = styled('img')({
   marginRight: 20,
 });
 
-const NavButton = styled(Button)({
+interface NavButtonProps extends ButtonProps {
+  to: string;
+  component: typeof RouterLink;
+}
+
+const NavButton = styled(Button)<NavButtonProps>({
   color: '#fff',
   marginRight: 20,
   fontWeight: 600,
