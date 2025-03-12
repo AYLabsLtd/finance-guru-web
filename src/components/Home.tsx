@@ -1,81 +1,160 @@
 import React from 'react';
-import { Container, Typography, Box, Alert } from '@mui/material';
+import { Container, Typography, Box, Alert, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const HomeContainer = styled(Container)({
-  textAlign: 'center',
-  padding: '60px 20px',
-  maxWidth: 800,
-  margin: '0 auto',
-});
+const Section = styled(Paper)(({ theme }) => ({
+  padding: '24px',
+  marginBottom: '24px',
+}));
 
 const Title = styled(Typography)({
-  fontSize: '2.2rem',
+  fontSize: '2.5rem',
   marginBottom: '20px',
+  fontWeight: 600,
 });
 
 const Description = styled(Typography)({
   fontSize: '1.2rem',
+  marginBottom: '32px',
+  lineHeight: 1.6,
+});
+
+const SectionTitle = styled(Typography)({
+  fontSize: '1.8rem',
+  marginBottom: '16px',
+  fontWeight: 500,
+});
+
+const SubTitle = styled(Typography)({
+  fontSize: '1.4rem',
+  marginTop: '16px',
+  marginBottom: '12px',
+  fontWeight: 500,
+});
+
+const SectionText = styled(Typography)({
+  fontSize: '1.1rem',
   marginBottom: '16px',
   lineHeight: 1.5,
 });
 
+const Example = styled(Box)({
+  backgroundColor: '#f5f5f5',
+  padding: '16px',
+  borderRadius: '8px',
+  marginBottom: '16px',
+});
+
+const ExampleTitle = styled(Typography)({
+  fontWeight: 500,
+  marginBottom: '8px',
+});
+
+const ExamplePoint = styled(Typography)({
+  fontFamily: 'monospace',
+  marginBottom: '4px',
+  paddingLeft: '20px',
+  position: 'relative',
+  '&::before': {
+    content: '"•"',
+    position: 'absolute',
+    left: '8px',
+  },
+});
+
+const ExampleResult = styled(Typography)({
+  fontFamily: 'monospace',
+  marginTop: '8px',
+  fontStyle: 'italic',
+});
+
+const BulletPoint = styled(Typography)({
+  fontSize: '1.1rem',
+  marginBottom: '8px',
+  paddingLeft: '20px',
+});
+
 export default function Home() {
   return (
-    <HomeContainer>
+    <Container maxWidth="lg" sx={{ py: 4 }}>
       <Title variant="h1">Welcome to Finance Guru</Title>
-      
       <Description>
-        This website is designed to help you explore various aspects 
-        of financial planning. Whether you're looking to estimate your 
-        mortgage payments or project future investment returns, we aim 
-        to provide simple yet illustrative tools that can make the 
-        process clearer.
+        Your comprehensive financial planning companion that helps you make informed decisions about loans, investments, and financial goals.
       </Description>
 
-      <Description>
-        By clicking on the "Home Mortgage Calculator" tab above, you'll find 
-        a suite of calculators covering mortgage and housing costs, SIP 
-        (Systematic Investment Plan) predictions, and more. These tools 
-        allow you to input a range of parameters—like annual interest rates, 
-        down payment amounts, and inflation estimates—and instantly see 
-        how changes in these factors can affect your overall financial picture.
-      </Description>
+      <Section elevation={2}>
+        <SectionTitle variant="h2">Mortgage Calculator</SectionTitle>
+        <SectionText>
+          Plan your home loan effectively by calculating EMI, total interest, and more. Input your desired house cost, down payment, interest rate, and loan term to get detailed insights.
+        </SectionText>
+        <Example>
+          <ExampleTitle>Example:</ExampleTitle>
+          <ExamplePoint>House Cost: $500,000</ExamplePoint>
+          <ExamplePoint>Down Payment: 20% ($100,000)</ExamplePoint>
+          <ExamplePoint>Interest Rate: 8.5% p.a.</ExamplePoint>
+          <ExamplePoint>Loan Term: 20 years</ExamplePoint>
+          <ExampleResult>Results show your monthly EMI, total interest paid, and complete payment schedule.</ExampleResult>
+        </Example>
+      </Section>
 
-      <Description>
-        By clicking on the "Systematic Investment Plan" tab above, you'll find 
-        tools to help you calculate and plan your systematic investments. 
-        This calculator allows you to input parameters like investment amount, 
-        interest rates, and investment duration to see potential returns and 
-        growth over time.
-      </Description>
+      <Section elevation={2}>
+        <SectionTitle variant="h2">SIP Calculator</SectionTitle>
+        <SectionText>
+          Two powerful calculators in one: Lump Sum and Monthly SIP. Calculate returns on your investments while considering tax implications and inflation adjustment.
+        </SectionText>
+        
+        <SubTitle variant="h3">Lump Sum Investment</SubTitle>
+        <Example>
+          <ExampleTitle>Example:</ExampleTitle>
+          <ExamplePoint>Investment Amount: $100,000</ExamplePoint>
+          <ExamplePoint>Time Period: 10 years</ExamplePoint>
+          <ExamplePoint>Expected Return: 12% p.a.</ExamplePoint>
+          <ExamplePoint>LTCG Tax: 10%</ExamplePoint>
+          <ExampleResult>See your expected returns, post-tax value, and inflation-adjusted growth.</ExampleResult>
+        </Example>
 
-      <Description>
-        By clicking on the "Car Loan Calculator" tab above, you'll find 
-        tools to help you calculate your car loan payments and total costs. 
-        This calculator helps you understand how different down payments, 
-        interest rates, and loan terms affect your monthly payments and 
-        total interest paid.
-      </Description>
+        <SubTitle variant="h3">Monthly SIP</SubTitle>
+        <Example>
+          <ExampleTitle>Example:</ExampleTitle>
+          <ExamplePoint>Monthly Investment: $10,000</ExamplePoint>
+          <ExamplePoint>Time Period: 15 years</ExamplePoint>
+          <ExamplePoint>Expected Return: 12% p.a.</ExamplePoint>
+          <ExamplePoint>LTCG Tax: 10%</ExamplePoint>
+          <ExampleResult>Calculate your wealth accumulation, actual returns, and real rate of return.</ExampleResult>
+        </Example>
+      </Section>
 
-      <Description>
-        Please note that these calculators are for <em>testing purposes only</em> 
-        and should not replace the advice of a certified financial professional. 
-        We hope they serve as a helpful starting point for your financial 
-        planning or learning journey.
-      </Description>
+      <Section elevation={2}>
+        <SectionTitle variant="h2">Car Loan Calculator</SectionTitle>
+        <SectionText>
+          Make smart decisions about your vehicle financing by understanding the complete cost breakdown, including EMI and total interest payable.
+        </SectionText>
+        <Example>
+          <ExampleTitle>Example:</ExampleTitle>
+          <ExamplePoint>Car Cost: $12,000</ExamplePoint>
+          <ExamplePoint>Down Payment: 25% ($3,000)</ExamplePoint>
+          <ExamplePoint>Interest Rate: 7.5% p.a.</ExamplePoint>
+          <ExamplePoint>Loan Term: 5 years</ExamplePoint>
+          <ExampleResult>Get insights into monthly payments, total interest, and overall cost.</ExampleResult>
+        </Example>
+      </Section>
 
-      {/* Disclaimer */}
-      <Box sx={{ width: '60%', margin: '20px auto', textAlign: 'center' }}>
-        <Alert severity="info">
-          <Typography variant="body2">
-            <strong>Advisory Note:</strong> This Website is for <em>testing purposes only</em> and 
-            should not be used for actual, real-life mortgage or SIP decisions. The results are 
-            purely illustrative and may not account for all factors relevant to your personal 
-            financial situation.
-          </Typography>
-        </Alert>
-      </Box>
-    </HomeContainer>
+      <Section elevation={2}>
+        <SectionTitle variant="h2">Key Features</SectionTitle>
+        <BulletPoint>• Real-time calculations with instant results</BulletPoint>
+        <BulletPoint>• Consideration of taxes and inflation impacts</BulletPoint>
+        <BulletPoint>• Detailed breakdown of all components</BulletPoint>
+        <BulletPoint>• User-friendly sliders for easy input adjustment</BulletPoint>
+        <BulletPoint>• Comprehensive result analysis</BulletPoint>
+      </Section>
+
+      <Alert severity="info" sx={{ mt: 4 }}>
+        <Typography variant="body2">
+          <strong>Advisory Note:</strong> This Website is for <em>testing purposes only</em> and 
+          should not be used for actual, real-life financial decisions. The results are purely 
+          illustrative and may not account for all factors relevant to your personal financial situation.
+        </Typography>
+      </Alert>
+    </Container>
   );
 } 

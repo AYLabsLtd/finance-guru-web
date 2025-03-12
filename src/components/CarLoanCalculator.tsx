@@ -189,7 +189,7 @@ export default function CarLoanCalculator() {
       {/* Disclaimer */}
       <Alert severity="info" sx={{ mt: 4 }}>
         <Typography variant="body2">
-          <strong>Advisory Note:</strong> This Website is for <em>testing purposes only</em> and 
+          <strong>Advisory Note:</strong> This Website is for <em>demonstration purposes only</em> and 
           should not be used for actual, real-life car loan decisions. The results are purely 
           illustrative and may not account for all factors relevant to your personal financial situation.
         </Typography>
