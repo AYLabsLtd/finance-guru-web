@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <AppBar position="static" sx={{ backgroundColor: '#005a9c', padding: '10px' }}>
       <Toolbar>
-        <Logo src="/imgs/logo.png" alt="My Logo" />
+        <Logo src="/finance-guru-web/imgs/logo.png" alt="Finance Guru" />
         <Box>
           <NavButton
             component={RouterLink}
