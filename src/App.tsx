@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { FinanceProvider } from './context/FinanceContext';
 import Navbar from './components/Navbar';
@@ -40,6 +40,7 @@ function App() {
             <Route path="/sip" element={<SIPCalculator />} />
             <Route path="/mortgage" element={<MortgageCalculator />} />
             <Route path="/car-loan" element={<CarLoanCalculator />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Router>
       </FinanceProvider>

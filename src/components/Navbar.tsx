@@ -26,11 +26,12 @@ const NavButton = styled(Button)<NavButtonProps>({
 
 export default function Navbar() {
   const location = useLocation();
+  const logoPath = `${import.meta.env.BASE_URL}imgs/logo.png`;
 
   return (
     <AppBar position="static" sx={{ backgroundColor: '#005a9c', padding: '10px' }}>
       <Toolbar>
-        <Logo src="/finance-guru-web/imgs/logo.png" alt="Finance Guru" />
+        <Logo src={logoPath} alt="Finance Guru" />
         <Box>
           <NavButton
             component={RouterLink}
