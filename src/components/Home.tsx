@@ -79,9 +79,11 @@ export default function Home() {
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Title variant="h1">Welcome to Finance Guru</Title>
       <Description>
-        Your comprehensive financial planning companion that helps you make informed decisions about loans, investments, and financial goals. 
-        For an introduction call or deeper dive into your financial future, please book some time on https://calendly.com/aylabsltd
-        , introduction call with me is free of charge but an Interac of $25 (aylabsltd@gmail.com) is needed to confirm booking for advance discussion and getting fully tailored to your needs experience. In your Interac message, include the email you used to book the meeting.
+        Your comprehensive financial planning companion that helps you make informed decisions about loans, investments, and financial goals.
+
+        For an introduction call or deeper dive into your financial future, please book some time on https://calendly.com/aylabsltd,
+        introduction call with me is free of charge but an Interac of $25 (aylabsltd@gmail.com) is needed to confirm booking for advance discussion and getting fully tailored to your needs experience.
+        In your Interac message, include the email you used to book the meeting.
       </Description>
 
       <Section elevation={2}>
@@ -104,7 +106,7 @@ export default function Home() {
         <SectionText>
           Two powerful calculators in one: Lump Sum and Monthly SIP. Calculate returns on your investments while considering tax implications and inflation adjustment.
         </SectionText>
-        
+
         <SubTitle variant="h3">Lump Sum Investment</SubTitle>
         <Example>
           <ExampleTitle>Example:</ExampleTitle>
@@ -152,11 +154,11 @@ export default function Home() {
 
       <Alert severity="info" sx={{ mt: 4 }}>
         <Typography variant="body2">
-          <strong>Advisory Note:</strong> This Website is for <em>testing purposes only</em> and 
-          should not be used for actual, real-life financial decisions. The results are purely 
+          <strong>Advisory Note:</strong> This Website is for <em>testing purposes only</em> and
+          should not be used for actual, real-life financial decisions. The results are purely
           illustrative and may not account for all factors relevant to your personal financial situation.
         </Typography>
       </Alert>
     </Container>
   );
-} 
+}
