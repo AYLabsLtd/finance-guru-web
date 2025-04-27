@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, Alert, Paper } from '@mui/material';
+import { Container, Typography, Box, Alert, Paper, Link } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const Section = styled(Paper)(({ theme }) => ({
@@ -85,8 +85,15 @@ export default function Home() {
       <Section elevation={2}>
         <SectionTitle variant="h2">Book a Consultation</SectionTitle>
         <SectionText>
-          For an introduction call or deeper dive into your financial future, please book some time on https://calendly.com/aylabsltd,
-          introduction call with me is free of charge but an Interac of $25 (aylabsltd@gmail.com) is needed to confirm booking for advance discussion and getting fully tailored to your needs experience.
+          For an introduction call or deeper dive into your financial future, please book some time on{' '}
+          <Link href="https://calendly.com/aylabsltd" target="_blank" rel="noopener" sx={{ fontWeight: 'bold' }}>
+            https://calendly.com/aylabsltd
+          </Link>,
+          introduction call with me is free of charge but an Interac of $25 (
+          <Link href="mailto:aylabsltd@gmail.com" sx={{ fontWeight: 'bold' }}>
+            aylabsltd@gmail.com
+          </Link>
+          ) is needed to confirm booking for advance discussion and getting fully tailored to your needs experience.
           In your Interac message, include the email you used to book the meeting.
         </SectionText>
       </Section>
