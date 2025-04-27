@@ -79,12 +79,17 @@ export default function Home() {
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Title variant="h1">Welcome to Finance Guru</Title>
       <Description>
-        Your comprehensive financial planning companion that helps you make informed decisions about loans, investments, and financial goals. ~{"\n"}
-
-        For an introduction call or deeper dive into your financial future, please book some time on https://calendly.com/aylabsltd,
-        introduction call with me is free of charge but an Interac of $25 (aylabsltd@gmail.com) is needed to confirm booking for advance discussion and getting fully tailored to your needs experience.
-        In your Interac message, include the email you used to book the meeting.
+        Your comprehensive financial planning companion that helps you make informed decisions about loans, investments, and financial goals.
       </Description>
+
+      <Section elevation={2}>
+        <SectionTitle variant="h2">Book a Consultation</SectionTitle>
+        <SectionText>
+          For an introduction call or deeper dive into your financial future, please book some time on https://calendly.com/aylabsltd,
+          introduction call with me is free of charge but an Interac of $25 (aylabsltd@gmail.com) is needed to confirm booking for advance discussion and getting fully tailored to your needs experience.
+          In your Interac message, include the email you used to book the meeting.
+        </SectionText>
+      </Section>
 
       <Section elevation={2}>
         <SectionTitle variant="h2">Mortgage Calculator</SectionTitle>
